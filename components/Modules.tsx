@@ -1,6 +1,6 @@
 import React from 'react';
 import { MODULES } from '../constants';
-import { BookOpen } from 'lucide-react';
+import { BookOpen, Plus } from 'lucide-react';
 
 export const Modules: React.FC = () => {
   return (
@@ -33,16 +33,21 @@ export const Modules: React.FC = () => {
                             </div>
                             <h3 className="text-xl font-bold text-white mb-2">{module.title}</h3>
                             <p className="text-sm text-gray-400 mb-4 italic">"{module.goal}"</p>
-                            <ul className="space-y-2">
-                                {module.items.slice(0, 4).map((item, i) => (
-                                    <li key={i} className="flex items-center gap-2 text-sm text-gray-300">
-                                        <span className="w-1.5 h-1.5 bg-brand-green rounded-full"></span>
-                                        {item}
+                            <ul className="space-y-3">
+                                {module.items.map((item, i) => (
+                                    <li key={i} className="flex items-start gap-2 text-sm text-gray-300">
+                                        <span className="w-1.5 h-1.5 bg-brand-green rounded-full mt-1.5 flex-shrink-0"></span>
+                                        <span className="leading-relaxed">{item}</span>
                                     </li>
                                 ))}
-                                {module.items.length > 4 && (
-                                    <li className="text-xs text-gray-500 mt-2">E muito mais...</li>
-                                )}
+                                
+                                {/* O Pulo do Gato: Indicador de que tem MUITO MAIS */}
+                                <li className="flex items-center gap-2 text-sm text-brand-gold font-bold italic mt-4 group cursor-default">
+                                    <div className="flex items-center justify-center w-5 h-5 rounded-full bg-brand-gold/10 border border-brand-gold/30 animate-pulse">
+                                        <Plus size={12} className="text-brand-gold" />
+                                    </div>
+                                    <span>[...] protocolos exclusivos desta etapa.</span>
+                                </li>
                             </ul>
                         </div>
 

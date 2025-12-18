@@ -6,10 +6,11 @@ import { Modules } from './components/Modules';
 import { Pricing } from './components/Pricing';
 import { Guarantee } from './components/Guarantee';
 import { FAQ } from './components/FAQ';
+import { StickyScarcityBar } from './components/StickyScarcityBar';
 
 const App: React.FC = () => {
   return (
-    <div className="font-sans text-white antialiased selection:bg-brand-red selection:text-white">
+    <div className="font-sans text-white antialiased selection:bg-brand-red selection:text-white pb-20 md:pb-0">
       <Hero />
       <Problem />
       <Solution />
@@ -17,6 +18,9 @@ const App: React.FC = () => {
       <Pricing />
       <Guarantee />
       <FAQ />
+      
+      {/* Barra de Escassez Fixa */}
+      <StickyScarcityBar />
       
       <footer className="bg-black py-8 border-t border-gray-900 text-center text-gray-600 text-sm">
         <div className="container mx-auto px-4">

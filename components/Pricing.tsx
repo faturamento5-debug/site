@@ -1,7 +1,7 @@
 import React from 'react';
 import { COPY } from '../constants';
 import { Button } from './Button';
-import { Check, Sparkles } from 'lucide-react';
+import { Check, Sparkles, TrendingUp, AlertCircle } from 'lucide-react';
 
 export const Pricing: React.FC = () => {
   // Split "10x de R$ 6,79" into parts for styling
@@ -17,9 +17,28 @@ export const Pricing: React.FC = () => {
 
       <div className="container mx-auto px-4 max-w-lg relative z-10">
         
-        <div className="bg-gray-900 rounded-2xl border-2 border-brand-gold/50 shadow-[0_0_50px_rgba(245,158,11,0.1)] overflow-hidden">
+        {/* SCARCITY WARNING BANNER */}
+        <div className="mb-4 bg-red-950/40 border border-red-500/30 rounded-xl p-4 flex items-start gap-3 animate-pulse-slow">
+            <AlertCircle className="text-red-500 w-5 h-5 flex-shrink-0 mt-0.5" />
+            <div>
+                <p className="text-red-200 text-sm font-bold uppercase tracking-wide mb-1">
+                    Aviso de Reajuste
+                </p>
+                <p className="text-xs text-red-200/70">
+                    Devido à alta demanda de suporte aos alunos, o preço será reajustado automaticamente às 23:59 deste Domingo.
+                </p>
+            </div>
+        </div>
+
+        <div className="bg-gray-900 rounded-2xl border-2 border-brand-gold/50 shadow-[0_0_50px_rgba(245,158,11,0.1)] overflow-hidden relative">
+            
+            {/* Corner Ribbon */}
+            <div className="absolute -right-12 top-6 rotate-45 bg-red-600 text-white text-[10px] font-bold py-1 w-40 text-center shadow-lg z-20">
+                ÚLTIMOS LOTES
+            </div>
+
             {/* Header */}
-            <div className="bg-brand-gold p-3 text-center">
+            <div className="bg-brand-gold p-3 text-center relative z-10">
                 <span className="text-brand-dark font-black uppercase tracking-widest text-sm flex items-center justify-center gap-2">
                     <Sparkles size={16} />
                     Oferta Por Tempo Limitado
@@ -53,6 +72,10 @@ export const Pricing: React.FC = () => {
                     <div className="flex items-center gap-3 text-gray-200">
                         <Check className="text-brand-gold w-5 h-5 flex-shrink-0" />
                         <span className="font-medium">Acesso Vitalício e Atualizações</span>
+                    </div>
+                    <div className="flex items-center gap-3 text-gray-200">
+                        <TrendingUp className="text-brand-red w-5 h-5 flex-shrink-0" />
+                        <span className="font-medium text-brand-red/90 font-bold">Preço congela em sua conta</span>
                     </div>
                 </div>
 
