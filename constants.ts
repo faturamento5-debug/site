@@ -1,12 +1,14 @@
 import { Benefit, Module, FaqItem } from './types';
 
+export const CHECKOUT_URL = "https://pay.kiwify.com.br/Mm9JJ6g";
+
 export const COPY = {
   headline: 'Por que você faz tudo "certo" e ela escolhe o cara que não faz nada?',
   subheadline: 'Esqueça as frases prontas de sedução. Descubra como desligar o "Modo Bonzinho" que sabota suas chances e faz você ser tratado como o "melhor amigo" ou pior, como nada...',
   price: {
-    full: 'R$ 157,90',
-    discounted: 'R$ 34,90',
-    installments: '5x de R$ 6,98'
+    full: 'R$ 147,90',
+    discounted: 'R$ 57,90',
+    installments: '10x de R$ 6,96'
   },
   cta: 'SIM! QUERO DOMINAR MINHA PRESENÇA',
   guaranteeTitle: 'Garantia de "Homem Novo" de 7 Dias',
